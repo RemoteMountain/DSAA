@@ -45,22 +45,43 @@ public class GenericArray<T> {
 
     // 查看数组是否包含元素e
     public boolean contains(T e) {
-        for (int i = 0; i < size; i++) {
-            if (data[i].equals(e)) {
-                return true;
-            }
-        }
-        return false;
+        return find(e) >= 0;
     }
 
     // 获取对应元素的下标, 未找到，返回 -1
     public int find(T e) {
-        for ( int i = 0; i < size; i++) {
-            if (data[i].equals(e)) {
-                return i;
+        if (e == null) {
+            for (int i = 0; i < size; i++) {
+                if (data[i] == null) {
+                    return i;
+                }
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (e.equals(data[i])) {
+                    return i;
+                }
             }
         }
         return -1;
+    }
+    //返回指定元素最后一次出现在列表中的下标
+    public int lastIndexOf(T e){
+        if (e == null) {
+            for (int i = size-1; i >= 0; i--) {
+                if (data[i]==null) {
+                    return i;
+                }
+            }
+        } else {
+            for (int i = size-1; i >= 0; i--) {
+                if (e.equals(data[i])) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+
     }
 
 
@@ -97,7 +118,7 @@ public class GenericArray<T> {
         for (int i = index + 1; i < size; i++) {
             data[i - 1] = data[i];
         }
-        size --;
+        size--;
         data[size] = null;
 
         // 缩容
@@ -159,7 +180,7 @@ public class GenericArray<T> {
     }
 
     private void checkIndexForAdd(int index) {
-        if(index < 0 || index > size) {
+        if (index < 0 || index > size) {
             throw new IllegalArgumentException("remove failed! Require index >=0 and index <= size.");
         }
     }

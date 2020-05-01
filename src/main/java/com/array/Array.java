@@ -76,7 +76,7 @@ public class Array {
     }
 
     public static void main(String[] args) {
-        Array array = new Array(5);
+        /*Array array = new Array(5);
         array.printAll();
         array.insert(0, 3);
         array.insert(0, 4);
@@ -84,6 +84,8 @@ public class Array {
         array.insert(3, 9);
         array.insert(3, 10);
         //array.insert(3, 11);
-        array.printAll();
+        array.printAll();*/
+        int i = 10;
+        System.out.println(i--);
     }
 }

@@ -19,7 +19,7 @@ public class LRUBaseLinkedList<T> {
     /**
      * 头结点
      */
-    private SNode<T> headNode;
+    private SNode<T> headNode; //哨兵节点，不存数据。
 
     /**
      * 链表长度

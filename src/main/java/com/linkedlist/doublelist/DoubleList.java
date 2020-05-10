@@ -27,8 +27,8 @@ public class DoubleList<T> {
     private Integer capacity;
 
     public DoubleList(){
-        this.head = new DNode<>();
-        this.tail = new DNode<>();
+        this.head = new DNode<T>();
+        this.tail = new DNode<T>();
     }
 
     private class DNode<T>{

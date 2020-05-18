@@ -59,8 +59,12 @@ public class LinkedListAlgo {
             }
             p = p.next;
         }
-        if (l1 != null)p.next = l1;
-        if (l2 != null)p.next = l2;
+        if (l1 != null) {
+            p.next = l1;
+        }
+        if (l2 != null) {
+            p.next = l2;
+        }
         Node re = soldier.next;
         return soldier.next;
 
@@ -91,7 +95,9 @@ public class LinkedListAlgo {
             fast = fast.next;
             ++i;
         }
-        if (fast == null)return list;
+        if (fast == null) {
+            return list;
+        }
         Node slow = list;
         Node prev = null;
         while (fast.next != null) {
@@ -143,6 +149,7 @@ public class LinkedListAlgo {
 
     public static void main(String[] args) {
         Node node1 = createNode(1);
+        System.out.println(node1);
         Node node2 = createNode(2);
         Node node3 = createNode(3);
         Node node4 = createNode(4);
@@ -151,7 +158,7 @@ public class LinkedListAlgo {
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
-        deleteLastKth(node1,5);
+        //deleteLastKth(node1,5);
         //node5.next = node1;
         //System.out.println(LinkedListAlgo.checkCircle(node1));
         //LinkedListAlgo.printAll(node1);

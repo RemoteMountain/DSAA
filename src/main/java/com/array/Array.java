@@ -68,6 +68,28 @@ public class Array {
         return true;
     }
 
+    //有序数组去重
+    //nums = [0,0,1,1,1,2,2,3,3,4]
+    public static int removeDuplicates(int[] nums) {
+        int length = nums.length;
+        if (nums == null)return 0;
+        if(nums.length < 2){
+            return nums.length;
+        }
+        int i = 1;
+        while (i<length){
+            if (nums[i] == nums[i+1]){
+                for (int p = i + 1; p < nums.length; ++p) {
+                    nums[p - 1] = nums[p];
+                }
+                length--;
+            }else {
+                i++;
+            }
+        }
+        return length+1;
+    }
+
     public void printAll() {
         for (int i = 0; i < count; ++i) {
             System.out.print(data[i] + " ");
@@ -85,7 +107,14 @@ public class Array {
         array.insert(3, 10);
         //array.insert(3, 11);
         array.printAll();*/
-        int i = 10;
-        System.out.println(i--);
+        int[] nums = {1,2};
+        int i = removeDuplicates(nums);
+        System.out.println(i);
+        for (int j = 0; j < i; j++) {
+            System.out.println(nums[j]);
+
+        }
+        //System.out.println(i);
+
     }
 }

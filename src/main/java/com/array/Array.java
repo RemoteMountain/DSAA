@@ -72,22 +72,25 @@ public class Array {
     //nums = [0,0,1,1,1,2,2,3,3,4]
     public static int removeDuplicates(int[] nums) {
         int length = nums.length;
-        if (nums == null)return 0;
+        if (nums == null) {
+            return 0;
+        }
         if(nums.length < 2){
             return nums.length;
         }
-        int i = 1;
-        while (i<length){
-            if (nums[i] == nums[i+1]){
+        int i = 0 , j =1;
+        while (j<length){
+            if (nums[i] == nums[j]){
                 for (int p = i + 1; p < nums.length; ++p) {
                     nums[p - 1] = nums[p];
                 }
                 length--;
             }else {
+                j++;
                 i++;
             }
         }
-        return length+1;
+        return length;
     }
 
     public void printAll() {
@@ -107,9 +110,9 @@ public class Array {
         array.insert(3, 10);
         //array.insert(3, 11);
         array.printAll();*/
-        int[] nums = {1,2};
+        int[] nums = {1,1,2};
         int i = removeDuplicates(nums);
-        System.out.println(i);
+        System.out.println("长度: "+i);
         for (int j = 0; j < i; j++) {
             System.out.println(nums[j]);
 

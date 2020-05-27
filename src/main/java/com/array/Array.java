@@ -68,29 +68,88 @@ public class Array {
         return true;
     }
 
-    //有序数组去重
+    //leetcode26 有序数组去重
     //nums = [0,0,1,1,1,2,2,3,3,4]
     public static int removeDuplicates(int[] nums) {
         int length = nums.length;
         if (nums == null) {
             return 0;
         }
-        if(nums.length < 2){
+        if (nums.length < 2) {
             return nums.length;
         }
-        int i = 0 , j =1;
-        while (j<length){
-            if (nums[i] == nums[j]){
+        int i = 0, j = 1;
+        while (j < length) {
+            if (nums[i] == nums[j]) {
                 for (int p = i + 1; p < nums.length; ++p) {
                     nums[p - 1] = nums[p];
                 }
                 length--;
-            }else {
+            } else {
                 j++;
                 i++;
             }
         }
         return length;
+    }
+
+    //leetcode 27 移除元素
+    //移除值为给定值的元素
+    public static int removeElement(int[] nums, int val) {
+        //时间复杂度为 O(n^2),空间复杂度 O(1)
+        /*int length = nums.length;
+        if (nums == null || length == 0) return 0;
+
+        //获取要删除元素下标，根据下标删除
+        int a = 0, b = 1;
+        while (b <= length) {
+            if (nums[a] == val) {
+                for (int i = a+1; i < length; i++) {
+                    nums[i-1] = nums[i];
+                }
+                length--;
+            }else {
+                a++;
+                b++;
+            }
+        }
+        return length;*/
+
+        int length = nums.length;
+        if (nums == null || length == 0) return 0;
+
+        //快慢指针，遇到元素与给定相等跳过
+        //元素与val相等，跳过，慢指针i 不变
+        //不相等，慢慢指针i 处元素赋值为快指针j处元素，慢指针 i+1
+        //适用于要删除元素较多
+        int i = 0;
+        for (int j= 0; j < length; j++) {
+            if (nums[j] != val){
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+        return i;
+
+
+
+
+        //时间复杂度 O(n),空间复杂度 O(1)
+        //赋值操作次数=要删除元素个数
+        //适用于要删除元素较少
+        /*int length = nums.length;
+        if (nums == null || length == 0) return 0;
+
+        int i = 0;
+        while (i < length){
+            if (nums[i] == val){
+                nums[i] = nums[length-1];
+                length--;
+            }else {
+                i++;
+            }
+        }
+        return length;*/
     }
 
     public void printAll() {
@@ -110,14 +169,18 @@ public class Array {
         array.insert(3, 10);
         //array.insert(3, 11);
         array.printAll();*/
-        int[] nums = {1,1,2};
-        int i = removeDuplicates(nums);
-        System.out.println("长度: "+i);
-        for (int j = 0; j < i; j++) {
+        int[] nums = {0, 1, 2, 2, 3, 0, 4, 2};
+        //int i = removeDuplicates(nums);
+        //System.out.println("长度: "+i);
+        /*for (int j = 0; j < i; j++) {
             System.out.println(nums[j]);
 
-        }
+        }*/
         //System.out.println(i);
-
+        int i = removeElement(nums, 2);
+        System.out.println("长度: " + i);
+        for (int j = 0; j < i; j++) {
+            System.out.println(nums[j]);
+        }
     }
 }

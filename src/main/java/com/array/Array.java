@@ -78,7 +78,7 @@ public class Array {
         if (nums.length < 2) {
             return nums.length;
         }
-        int i = 0, j = 1;
+        /*int i = 0, j = 1;
         while (j < length) {
             if (nums[i] == nums[j]) {
                 for (int p = i + 1; p < nums.length; ++p) {
@@ -90,7 +90,18 @@ public class Array {
                 i++;
             }
         }
-        return length;
+        return length;*/
+
+        //双指针
+        int i = 0;
+        for (int j = 1; j < length; j++) {
+            if (nums[i] != nums[j]){
+                i++;
+                nums[i] = nums[j];
+            }
+
+        }
+        return i+1;
     }
 
     //leetcode 27 移除元素

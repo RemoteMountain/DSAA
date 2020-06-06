@@ -1,6 +1,5 @@
 package com.hash;
 
-import java.util.HashMap;
 
 public class HashTable<K,V> {
 

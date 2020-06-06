@@ -65,7 +65,6 @@ public class LinkedListAlgo {
         if (l2 != null) {
             p.next = l2;
         }
-        Node re = soldier.next;
         return soldier.next;
 
     }

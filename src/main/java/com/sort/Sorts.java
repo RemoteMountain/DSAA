@@ -1,5 +1,7 @@
 package com.sort;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 /**
  * @Description : 冒泡、插入、选择  //描述
  * @Author : Liwang  //作者
@@ -80,16 +82,45 @@ public class Sorts {
             // 查找插入的位置
             for (; j >= 0; --j) {
                 if (a[j] > value) {
-                    a[j+1] = a[j];  // 数据移动
+                    a[j + 1] = a[j];  // 数据移动
                 } else {
                     break;
                 }
             }
-            a[j+1] = value; // 插入数据
+            a[j + 1] = value; // 插入数据
         }
     }
 
+    //选择排序
+    public static void selectSort(int[] a, int n) {
+        if (n <= 1) {
+            return;
+        }
 
+        int lastMin = 0;
+        for (int i = 0; i < n; i++) {
+            int j = i;
+            int min = a[i];
+            for (; j < n - i - 1; j++) {
+                if (a[j + 1] < min) {
+                    min = a[j + 1];
+                    lastMin = j + 1;
+                }
+            }
+            int tmp = a[i];
+            a[i] = min;
+            a[lastMin] = tmp;
+
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] a = {4, 5, 6, 3, 2, 1};
+        selectSort(a, 6);
+        for (int i = 0; i < 6; i++) {
+            System.out.println(a[i]);
+        }
+    }
 
 
 }

@@ -97,14 +97,13 @@ public class Sorts {
             return;
         }
 
-        int lastMin = 0;
         for (int i = 0; i < n; i++) {
-            int j = i;
+            int j = i,lastMin =i;
             int min = a[i];
-            for (; j < n - i - 1; j++) {
-                if (a[j + 1] < min) {
-                    min = a[j + 1];
-                    lastMin = j + 1;
+            for (; j < n-1; j++) {
+                if (a[j+1] < min) {
+                    min = a[j+1];
+                    lastMin = j+1;
                 }
             }
             int tmp = a[i];
@@ -115,9 +114,9 @@ public class Sorts {
     }
 
     public static void main(String[] args) {
-        int[] a = {4, 5, 6, 3, 2, 1};
+        int[] a = {3, 4, 2, 1, 5, 6, 7, 8};
         selectSort(a, 6);
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
         }
     }

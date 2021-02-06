@@ -20,4 +20,29 @@ public class Leetcode1 {
         }
         return 1.0 * maxSum / k;
     }
+
+    public int equalSubstring(String s, String t, int maxCost) {
+        byte[] sBytes = s.getBytes();
+        byte[] tBytes = t.getBytes();
+        int cons = 0;
+        int i = 0;
+        for (i = 0; i < sBytes.length; i++) {
+            cons += Math.abs(sBytes[i] - tBytes[i]);
+            /*while (i == 0){
+                if (cons <= maxCost){
+                    return 0;
+                }
+            }*/
+            while (cons >=maxCost){
+                continue;
+            }
+        }
+        if (cons == maxCost){
+            return i+1;
+        }else {
+            return i;
+        }
+    }
+
+
 }

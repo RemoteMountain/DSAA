@@ -1,8 +1,9 @@
 package com.leetcode;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 
-public class Leetcode1 {
+public class Leetcode202102 {
 
     /*
      * 643. 子数组最大平均数 I*/
@@ -22,7 +23,7 @@ public class Leetcode1 {
     }
 
     /*1208  尽可能使字符串相等
-    * */
+     * */
     public int equalSubstring(String s, String t, int maxCost) {
         byte[] sBytes = s.getBytes();
         byte[] tBytes = t.getBytes();
@@ -61,6 +62,34 @@ public class Leetcode1 {
             end++;
         }
         return maxLength;
+    }
+
+    /*
+     * 888. 公平的糖果棒交换*/
+    public int[] fairCandySwap(int[] A, int[] B) {
+        int sumA = Arrays.stream(A).sum();
+        int sumB = Arrays.stream(B).sum();
+        int delta = (sumA - sumB) / 2;
+        int aN = A.length;
+        int bN = B.length;
+        int i = 0;
+        int j = 0;
+        Arrays.sort(A);
+        Arrays.sort(B);
+        int[] ans = new int[2];
+        while (i < aN && j < bN) {
+            int x = A[i];
+            int y = B[j];
+            if (x - y > delta) {
+                j++;
+            } else if (x - y < delta) {
+                i++;
+            } else {
+                ans[0] = x;
+                ans[1] = y;
+            }
+        }
+        return ans;
     }
 
 

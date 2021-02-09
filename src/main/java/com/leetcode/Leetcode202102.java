@@ -1,6 +1,8 @@
 package com.leetcode;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Leetcode202102 {
 
@@ -69,13 +71,25 @@ public class Leetcode202102 {
         int sumA = Arrays.stream(A).sum();
         int sumB = Arrays.stream(B).sum();
         int delta = (sumA - sumB) / 2;
-        int aN = A.length;
-        int bN = B.length;
-        int i = 0;
+        int[] ans = new int[2];
+        Set<Integer> aSet = new HashSet();
+        for (int a : A) {
+            aSet.add(a);
+        }
+        for (int y : B) {
+            int x = y + delta;
+            if (aSet.contains(x)) {
+                ans[0] = x;
+                ans[1] = y;
+            }
+
+        }
+        return ans;
+        /*int i = 0;
         int j = 0;
         Arrays.sort(A);
         Arrays.sort(B);
-        int[] ans = new int[2];
+
         while (i < aN && j < bN) {
             int x = A[i];
             int y = B[j];
@@ -87,8 +101,24 @@ public class Leetcode202102 {
                 ans[0] = x;
                 ans[1] = y;
             }
+        }*/
+
+    }
+
+    /*424. 替换后的最长重复字符
+     * */
+    public int characterReplacement(String s, int k) {
+        return 1;
+    }
+
+    /*665. 非递减数列
+     */
+    public boolean checkPossibility(int[] nums) {
+        Set<Integer> set = new HashSet();
+        for (int num : nums) {
+            set.add(num);
         }
-        return ans;
+        return false;
     }
 
 

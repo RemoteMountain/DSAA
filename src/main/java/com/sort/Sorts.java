@@ -1,7 +1,5 @@
 package com.sort;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 /**
  * @Description : 冒泡、插入、选择  //描述
  * @Author : Liwang  //作者
@@ -98,12 +96,12 @@ public class Sorts {
         }
 
         for (int i = 0; i < n; i++) {
-            int j = i,lastMin =i;
+            int j = i, lastMin = i;
             int min = a[i];
-            for (; j < n-1; j++) {
-                if (a[j+1] < min) {
-                    min = a[j+1];
-                    lastMin = j+1;
+            for (; j < n - 1; j++) {
+                if (a[j + 1] < min) {
+                    min = a[j + 1];
+                    lastMin = j + 1;
                 }
             }
             int tmp = a[i];
@@ -113,12 +111,46 @@ public class Sorts {
         }
     }
 
-    public static void main(String[] args) {
-        int[] a = {3, 4, 2, 1, 5, 6, 7, 8};
-        selectSort(a, 6);
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
+    public static void mergeSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
         }
+        mergeSort(arr, 0, arr.length - 1);
+    }
+
+    public static void mergeSort(int[] arr, int l, int r) {
+        if (l == r) {
+            return;
+        }
+        int mid = l + ((r - l) >> 1);
+        mergeSort(arr, l, mid);
+        mergeSort(arr, mid + 1, r);
+        merge(arr, l, r, mid);
+    }
+
+    private static void merge(int[] arr, int l, int r, int mid) {
+        int[] help = new int[r - l + 1];
+        int i = 0;
+        int p1 = l;
+        int p2 = mid + 1;
+        while (p1 <= mid && p2 <= r) {
+            help[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
+        }
+        while (p1 <= mid) {
+            help[i++] = arr[p1++];
+        }
+        while (p2 <= r) {
+            help[i++] = arr[p2++];
+        }
+        for (i = 0; i < help.length; i++) {
+            arr[l + i] = help[i];
+        }
+    }
+
+
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 2, 7, 4, 1};
+        mergeSort(arr);
     }
 
 

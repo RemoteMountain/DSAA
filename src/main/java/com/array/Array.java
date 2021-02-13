@@ -95,13 +95,13 @@ public class Array {
         //双指针
         int i = 0;
         for (int j = 1; j < length; j++) {
-            if (nums[i] != nums[j]){
+            if (nums[i] != nums[j]) {
                 i++;
                 nums[i] = nums[j];
             }
 
         }
-        return i+1;
+        return i + 1;
     }
 
     //leetcode 27 移除元素
@@ -134,15 +134,13 @@ public class Array {
         //不相等，慢慢指针i 处元素赋值为快指针j处元素，慢指针 i+1
         //适用于要删除元素较多
         int i = 0;
-        for (int j= 0; j < length; j++) {
-            if (nums[j] != val){
+        for (int j = 0; j < length; j++) {
+            if (nums[j] != val) {
                 nums[i] = nums[j];
                 i++;
             }
         }
         return i;
-
-
 
 
         //时间复杂度 O(n),空间复杂度 O(1)
@@ -168,6 +166,14 @@ public class Array {
             System.out.print(data[i] + " ");
         }
         System.out.println();
+    }
+
+    public int[] generateRandomArray(int size, int value) {
+        int[] arr = new int[(int) ((size + 1) * Math.random())];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) ((value + 1) * Math.random()) - (int) ((value) * Math.random());
+        }
+        return arr;
     }
 
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package com.niuke;
 
-import static com.niuke.day2.Day2.partition;
-import static com.niuke.day2.Day2.swap;
+import static com.niuke.day2.Partiion.partition;
+import static com.niuke.day2.Partiion.swap;
 
 public class Sort {
 

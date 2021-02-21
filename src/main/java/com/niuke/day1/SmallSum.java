@@ -1,6 +1,6 @@
 package com.niuke.day1;
 
-public class Day1 {
+public class SmallSum {
 
     /*小和问题*/
     public int smallSum(int[] arr) {

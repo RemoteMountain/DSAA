@@ -1,4 +1,4 @@
-package com.niuke.day2;
+package com.niuke.day1;
 
 public class MaxGap {
 

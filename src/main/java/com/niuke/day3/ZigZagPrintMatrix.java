@@ -1,5 +1,6 @@
 package com.niuke.day3;
 
+/*之字形打印矩阵*/
 public class ZigZagPrintMatrix {
 
     public static void printMatrixZigZag(int[][] m) {

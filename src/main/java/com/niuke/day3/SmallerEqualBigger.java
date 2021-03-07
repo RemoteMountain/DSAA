@@ -1,5 +1,6 @@
 package com.niuke.day3;
 
+/*链表分区，且要求空间复杂度为O(1)且稳定*/
 public class SmallerEqualBigger {
 
     public static class Node {

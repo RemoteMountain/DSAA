@@ -1,5 +1,6 @@
 package com.niuke.day3;
 
+/*数字是否在矩阵中*/
 public class FindNumInSortedMatrix {
 
     public static boolean isContains(int[][] m, int num) {

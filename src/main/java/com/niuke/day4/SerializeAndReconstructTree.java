@@ -19,9 +19,9 @@ public class SerializeAndReconstructTree {
 	/*前序遍历序列化*/
 	public static String serialByPre(Node head) {
 		if (head == null) {
-			return "#_";
+			return "#!";
 		}
-		String res = head.value + "_";
+		String res = head.value + "!";
 		res += serialByPre(head.left);
 		res += serialByPre(head.right);
 		return res;

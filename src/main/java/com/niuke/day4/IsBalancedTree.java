@@ -19,7 +19,6 @@ public class IsBalancedTree {
         System.out.println(height);
         return res[0];
         //int height = getHeight(head);
-        //System.out.println(height);
         //return height == -1?false:true;
     }
 

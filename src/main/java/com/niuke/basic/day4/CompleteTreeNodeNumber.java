@@ -16,16 +16,29 @@ public class CompleteTreeNodeNumber {
         if (head == null) {
             return 0;
         }
-        return process(head);
+        return bs(head, 1, mostLeftLevel(head, 1));
     }
 
-    
-    public static int process(Node head) {
-        if (head == null) {
-            return 0;
+
+    public static int bs(Node node, int l, int h) {
+        if (l == h) {
+            return 1;
         }
-        return process(head.left) + process(head.right) + 1;
+        if (mostLeftLevel(node.right, l + 1) == h) {
+            return (1 << (h - l)) + bs(node.right, l + 1, h);
+        } else {
+            return (1 << (h - l - 1)) + bs(node.left, l + 1, h);
+        }
     }
+
+    private static int mostLeftLevel(Node node, int level) {
+        while (node != null) {
+            level++;
+            node = node.left;
+        }
+        return level - 1;
+    }
+
 
     public static void main(String[] args) {
         Node head = new Node(4);

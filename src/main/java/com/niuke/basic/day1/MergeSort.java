@@ -2,7 +2,12 @@ package com.niuke.basic.day1;
 
 import java.util.Arrays;
 
-/*归并排序*/
+/**
+ * 　　* @description: 归并排序
+ * 　　* @author LiWang
+ * 　　* @date 2021/4/3 22:29
+ *
+ */
 public class MergeSort {
 
 	public static void mergeSort(int[] arr) {
@@ -28,7 +33,7 @@ public class MergeSort {
 		int p1 = l;
 		int p2 = m + 1;
 		while (p1 <= m && p2 <= r) {
-			help[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
+			help[i++] = arr[p1] <= arr[p2] ? arr[p1++] : arr[p2++];
 		}
 		while (p1 <= m) {
 			help[i++] = arr[p1++];

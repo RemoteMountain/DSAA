@@ -15,11 +15,7 @@ public class ReversePairs {
     }
 
     public static int reversePairs(int[] arr, int l, int r) {
-        if (l == r) {
-            return 0;
-        }
-        int mid = l + ((r - l) >> 2);
-        return reversePairs(arr, l, mid) + reversePairs(arr, mid + 1, l) + merge(arr, l, mid, r);
+        return 0;
     }
 
     private static int merge(int[] arr, int l, int mid, int r) {

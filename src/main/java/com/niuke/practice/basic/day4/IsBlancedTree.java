@@ -23,39 +23,11 @@ public class IsBlancedTree {
     }
 
     private static int getHeight(Node head, int level, boolean[] res) {
-        if (head == null) {
-            return level;
-        }
-        int lH = getHeight(head.left, level + 1, res);
-        if (!res[0]) {
-            return level;
-        }
-        int rH = getHeight(head.right, level + 1, res);
-        if (!res[0]) {
-            return level;
-        }
-        if (Math.abs(lH - rH) > 1) {
-            res[0] = false;
-        }
-        return Math.max(lH, rH);
+        return 0;
     }
 
     public static int getHeight(Node head) {
-        if (head == null) {
-            return 0;
-        }
-        int lH = getHeight(head.left);
-        if (lH == -1) {
-            return -1;
-        }
-        int rH = getHeight(head.right);
-        if (rH == -1) {
-            return -1;
-        }
-        if (Math.abs(lH - rH) > 1) {
-            return -1;
-        }
-        return Math.max(lH, rH) + 1;
+        return 0;
     }
 
     public static void main(String[] args) {

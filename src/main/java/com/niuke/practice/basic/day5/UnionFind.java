@@ -24,43 +24,23 @@ public class UnionFind {
         public void makeSet(List<Node> nodes) {
             fatherMap.clear();
             sizeMap.clear();
-            for (Node node : nodes) {
-                fatherMap.put(node, node);
-                sizeMap.put(node, 1);
+            for (Node node: nodes) {
+                fatherMap.put(node,node);
+                sizeMap.put(node,1);
             }
         }
 
         public Node findHead(Node node) {
-            Node father = fatherMap.get(node);
-            if (father != node) {
-                father = findHead(father);
-            }
-            fatherMap.put(node, father);
-            return father;
+            return null;
         }
 
 
         public boolean isSameSet(Node a, Node b) {
-            return findHead(a) == findHead(b);
+            return false;
         }
 
         public void union(Node a, Node b) {
-            if (a == null || b == null) {
-                return;
-            }
-            Node aHead = findHead(a);
-            Node bHead = findHead(b);
-            if (aHead != bHead) {
-                Integer aSize = sizeMap.get(aHead);
-                Integer bSize = sizeMap.get(bHead);
-                if (aSize <= bSize) {
-                    fatherMap.put(aHead, bHead);
-                    sizeMap.put(bHead, aSize + bSize);
-                } else {
-                    fatherMap.put(bHead, aHead);
-                    sizeMap.put(aHead, aSize + bSize);
-                }
-            }
+
         }
     }
 

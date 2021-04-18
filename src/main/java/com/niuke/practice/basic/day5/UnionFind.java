@@ -8,10 +8,6 @@ import java.util.List;
  */
 public class UnionFind {
 
-    public static class Node {
-        // whatever you like
-    }
-
     public static class UnionFindSet {
         public HashMap<Node, Node> fatherMap; // k-节点，v-节点的父节点
         public HashMap<Node, Integer> sizeMap; // k-节点，v-节点所在集合节点个数
@@ -41,6 +37,10 @@ public class UnionFind {
 
         public void union(Node a, Node b) {
 
+        }
+
+        public static class Node {
+            // whatever you like
         }
     }
 

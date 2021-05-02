@@ -1,6 +1,6 @@
 package com.niuke.basic.day3;
 
-/*链表分区，且要求空间复杂度为O(1)且稳定*/
+/*链表分区*/
 public class SmallerEqualBigger {
 
     public static class Node {
@@ -12,6 +12,9 @@ public class SmallerEqualBigger {
         }
     }
 
+    /*
+    非稳定的分区，空间复杂度为O(n)，时间复杂度O(n)
+    * */
     public static Node listPartition1(Node head, int pivot) {
 
         if (head == null) {
@@ -59,6 +62,9 @@ public class SmallerEqualBigger {
         nodeArr[b] = tmp;
     }
 
+    /*
+    稳定的分区，空间复杂度为O(1)，时间复杂度O(n)
+    * */
     public static Node listPartition2(Node head, int pivot) {
         Node sH = null; // small head
         Node sT = null; // small tail
@@ -109,6 +115,26 @@ public class SmallerEqualBigger {
         }
         return sH != null ? sH : eH != null ? eH : bH;
 
+    }
+
+    public static void printList(Node head) {
+        while (head != null) {
+            System.out.print(head.value + " ");
+            head = head.next;
+        }
+        System.out.println();
+    }
+
+
+    public static void main(String[] args) {
+        Node head = new Node(9);
+        head.next = new Node(0);
+        head.next.next = new Node(4);
+        head.next.next.next = new Node(5);
+        head.next.next.next.next = new Node(1);
+        printList(head);
+        Node node = listPartition1(head, 3);
+        printList(node);
     }
 
 

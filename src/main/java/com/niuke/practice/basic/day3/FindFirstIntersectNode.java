@@ -15,24 +15,32 @@ public class FindFirstIntersectNode {
     }
 
     public static Node getLoopNode(Node head) {
-        if (head == null || head.next == null || head.next.next == null){
+        if (head == null || head.next == null || head.next.next == null) {
             return null;
         }
         Node slow = head;
         Node fast = head;
-        while (fast.next !=null&&fast.next.next!=null){
-            slow = slow.next;
-            fast = fast.next.next;
-            if (slow == fast){
-                fast = head;
+        while (slow != fast) {
+            if (fast.next == null || fast.next.next == null) {
                 return null;
             }
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        while (slow != fast){
+        fast = head;
+        while (slow != fast) {
             slow = slow.next;
             fast = fast.next;
         }
         return slow;
+    }
+
+    public static Node noLoop(Node head1, Node head2) {
+        return null;
+    }
+
+    public static Node bothLoop(Node head1, Node loop1, Node head2, Node loop2) {
+        return null;
     }
 
     public static void main(String[] args) {

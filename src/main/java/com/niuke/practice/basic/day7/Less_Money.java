@@ -9,7 +9,7 @@ public class Less_Money {
         return 0;
     }
 
-    public static class MinheapComparator implements Comparator<Integer>{
+    public static class MinheapComparator implements Comparator<Integer> {
 
         @Override
         public int compare(Integer o1, Integer o2) {
@@ -28,16 +28,16 @@ public class Less_Money {
 
     public static void main(String[] args) {
         // solution
-        int[] arr = { 9, 8, 7, 6 };
+        int[] arr = {9, 8, 7, 6};
         System.out.println(lessMoney(arr));
 
-        int[] arrForHeap = { 3, 5, 2, 7, 0, 1, 6, 4 };
+        int[] arrForHeap = {3, 5, 2, 7, 0, 1, 6, 4};
         // min heap
         PriorityQueue<Integer> minQ1 = new PriorityQueue<>();
         for (int i = 0; i < arrForHeap.length; i++) {
             minQ1.add(arrForHeap[i]);
         }
-        while (!minQ1.isEmpty()){
+        while (!minQ1.isEmpty()) {
             System.out.print(minQ1.poll() + " ");
         }
         System.out.println();

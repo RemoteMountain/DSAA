@@ -1,6 +1,6 @@
 package com.niuke.basic.day8;
 
-//背包问题
+//背包问题:一个数组中的数任意相加能否得到一个给定的数字。
 public class MoneyProblem {
 
     public static boolean money1(int[] arr, int aim) {

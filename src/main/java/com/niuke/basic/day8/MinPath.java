@@ -21,19 +21,17 @@ public class MinPath {
         if (matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) {
             return 0;
         }
-        int q = i;
-        int p = j;
+        int p = i;
+        int q = j;
         int row = matrix.length;
         int col = matrix[0].length;
         int[][] dp = new int[row][col];
-        if (i == matrix.length - 1 && j == matrix[0].length - 1) {
-            dp[i][j] = matrix[i][j];
-        }
+        dp[row-1][col-1] = matrix[row-1][col-1];
         for (j = 1; j >= 0; j--) {
-            dp[row-1][j] = matrix[row-1][j] + dp[row-1][j + 1];
+            dp[2][j] = matrix[2][j] + dp[2][j + 1];
         }
         for (i = 1; i >= 0; i--) {
-            dp[i][col-1] = matrix[i][col-1] + dp[i + 1][col-1];
+            dp[i][2] = matrix[i][2] + dp[i + 1][2];
         }
         for (i = 1; i >= 0; i--) {
             for (j = 1; j >= 0; j--) {
@@ -69,6 +67,6 @@ public class MinPath {
 
     public static void main(String[] args) {
         int[][] matrix = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
-        System.out.println(process2(matrix, 0, 0));
+        System.out.println(process2(matrix, 2, 1));
     }
 }

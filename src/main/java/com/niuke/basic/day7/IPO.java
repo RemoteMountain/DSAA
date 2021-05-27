@@ -56,4 +56,10 @@ public class IPO {
         }
         return W;
     }
+
+    public static void main(String[] args) {
+        int[] Capital = {1,1,1,1,5};
+        int[] Profits = {1,0,1,1,6};
+        System.out.println(findMaximizedCapital(4,1,Profits,Capital));
+    }
 }

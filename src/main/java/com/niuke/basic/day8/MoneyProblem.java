@@ -15,6 +15,9 @@ public class MoneyProblem {
         if (i == arr.length) {
             return false;
         }
+        /*if (i == arr.length){
+            return sum == aim;
+        }*/
         return process1(arr, i + 1, sum, aim) || process1(arr, i + 1, sum + arr[i], aim);
     }
 
@@ -27,7 +30,7 @@ public class MoneyProblem {
             for (int j = aim - 1; j >= 0; j--) {
                 dp[i][j] = dp[i + 1][j];
                 if (j + arr[i] <= aim) {
-                    dp[i][j] = dp[i][j] || dp[i + 1][j + arr[i]];
+                    dp[i][j] = dp[i + 1][j] || dp[i + 1][j + arr[i]];
                 }
             }
         }
@@ -35,7 +38,7 @@ public class MoneyProblem {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 1, 4, 8 };
+        int[] arr = {1, 4, 8};
         int aim = 12;
         System.out.println(money1(arr, aim));
         System.out.println(money2(arr, aim));

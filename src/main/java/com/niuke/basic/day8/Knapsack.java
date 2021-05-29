@@ -11,6 +11,13 @@ public class Knapsack {
         return Math.max(v1,v2);
     }
 
+    public static int process2(int[] weights, int[] values,int w){
+        return 0;
+
+    }
+
+
+
     public static void main(String[] args) {
         int[] weights = {1,1,1,1,5};
         int[] values = {1,1,1,1,5};

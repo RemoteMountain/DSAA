@@ -1,13 +1,8 @@
-package com.niuke.advance;
+package com.niuke.advance.day1;
 
 public class KMP {
 
-    public static void main(String[] args) {
-        String str1 = "abc123def";
-        String str2 = "123d";
-        System.out.println(str1.indexOf(str2));
-        System.out.println(getIndexOf1(str1, str2));
-    }
+
 
     //O(n*m)
     public static int getIndexOf1(String str1, String str2) {
@@ -76,5 +71,12 @@ public class KMP {
             }
         }
         return next;
+    }
+
+    public static void main(String[] args) {
+        String str1 = "abc123def";
+        String str2 = "123d";
+        System.out.println(str1.indexOf(str2));
+        System.out.println(getIndexOf1(str1, str2));
     }
 }

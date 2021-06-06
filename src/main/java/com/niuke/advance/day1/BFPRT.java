@@ -56,6 +56,7 @@ public class BFPRT {
     }
 
     // O(N)
+    //最小的k个数
     public static int[] getMinKNumsByBFPRT(int[] arr, int k) {
         if (k < 1 || k > arr.length) {
             return arr;
@@ -74,6 +75,7 @@ public class BFPRT {
         return res;
     }
 
+    //第k小的数
     public static int getMinKthByBFPRT(int[] arr, int K) {
         int[] copyArr = copyArray(arr);
         return select(copyArr, 0, copyArr.length - 1, K - 1);
@@ -170,6 +172,7 @@ public class BFPRT {
         // sorted : { 1, 1, 1, 1, 2, 2, 2, 3, 3, 5, 5, 5, 6, 6, 6, 7, 9, 9, 9 }
         printArray(getMinKNumsByHeap(arr, 10));
         printArray(getMinKNumsByBFPRT(arr, 10));
+        System.out.println(getMinKthByBFPRT(arr,1));
 
     }
 }

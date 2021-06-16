@@ -7,52 +7,53 @@ import java.util.Stack;
 public class StackAndQueueConvert {
 
     public static class TwoStackQueue {
-        private Stack<Integer> push;
-        private Stack<Integer> pop;
+        private Stack<Integer> pushStack;
+        private Stack<Integer> popStack;
 
         public TwoStackQueue() {
-            push = new Stack<Integer>();
-            pop = new Stack<Integer>();
+            pushStack = new Stack<Integer>();
+            popStack = new Stack<Integer>();
         }
 
-        public void push(int value){
-
+        public void push(int value) {
+            pushStack.push(value);
         }
 
-        public Integer pop(){
-            return null;
+        public Integer pop() {
+            return 0;
         }
 
-        public Integer peek(){
-            return null;
+        public Integer peek() {
+            return 0;
         }
 
     }
 
     public static class TwoQueueStack {
-        private Queue<Integer> data;
-        private Queue<Integer> help;
+        private Queue<Integer> dataQueue;
+        private Queue<Integer> helpQueue;
 
         public TwoQueueStack() {
-            data = new LinkedList<Integer>();
-            help = new LinkedList<Integer>();
+            dataQueue = new LinkedList<Integer>();
+            helpQueue = new LinkedList<Integer>();
         }
 
         public void push(int value) {
+            dataQueue.add(value);
         }
 
         public Integer pop() {
-            return null;
+            return 0;
         }
 
         public Integer peek() {
-            return null;
+            return 0;
         }
 
         private void swap() {
-            Queue<Integer> tmp = help;
-            help = data;
-            data = tmp;
+            Queue<Integer> tmpQueue = helpQueue;
+            helpQueue = dataQueue;
+            dataQueue = tmpQueue;
         }
 
     }

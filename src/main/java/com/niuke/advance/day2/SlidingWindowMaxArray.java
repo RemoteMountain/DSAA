@@ -13,7 +13,7 @@ public class SlidingWindowMaxArray {
         int index = 0;
         for (int i = 0; i < arr.length; i++) {
             while (!qmax.isEmpty() && arr[qmax.peekLast()] <= arr[i]) {
-                qmax.peekLast();
+                qmax.pollLast();
             }
             qmax.addLast(i);
             if (qmax.peekFirst() == i - w) {

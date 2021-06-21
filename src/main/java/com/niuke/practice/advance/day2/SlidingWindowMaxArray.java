@@ -1,4 +1,4 @@
-package com.niuke.practice.advance;
+package com.niuke.practice.advance.day2;
 
 public class SlidingWindowMaxArray {
 

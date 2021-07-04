@@ -95,7 +95,7 @@ public class PreInPosTraversal {
 
 
     public static void main(String[] args) {
-        /*Node head = new Node(5);
+        Node head = new Node(5);
         head.left = new Node(3);
         head.right = new Node(8);
         head.left.left = new Node(2);
@@ -123,6 +123,6 @@ public class PreInPosTraversal {
         System.out.println("============unrecursive=============");
         preOrderUnRecur(head);
         inOrderUnRecur(head);
-        posOrderUnRecur1(head);*/
+        posOrderUnRecur1(head);
     }
 }

@@ -3,6 +3,7 @@ package com.niuke.advance.day3;
 import java.util.Scanner;
 import java.util.Stack;
 
+//能相互看见烽火的山峰对个数
 public class MountainsAndFlame {
 
     public static void main(String[] args) {

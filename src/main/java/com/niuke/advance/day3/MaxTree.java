@@ -3,6 +3,7 @@ package com.niuke.advance.day3;
 import java.util.HashMap;
 import java.util.Stack;
 
+//基于单调栈构造最大树
 public class MaxTree {
 
     public static class Node {
@@ -64,9 +65,9 @@ public class MaxTree {
                 }
             } else {
                 Node parent = left.value < right.value ? left : right;
-                if (parent.left == null){
+                if (parent.left == null) {
                     parent.left = curNode;
-                }else {
+                } else {
                     parent.right = curNode;
                 }
             }
@@ -75,17 +76,17 @@ public class MaxTree {
         return head;
     }
 
-    public static void popStackSetMap(Stack<Node> stack,HashMap<Node,Node> map){
+    public static void popStackSetMap(Stack<Node> stack, HashMap<Node, Node> map) {
         Node popNode = stack.pop();
-        if (stack.isEmpty()){
-            map.put(popNode,null);
-        }else {
-            map.put(popNode,stack.peek());
+        if (stack.isEmpty()) {
+            map.put(popNode, null);
+        } else {
+            map.put(popNode, stack.peek());
         }
     }
 
-    public static void printPreOrder(Node head){
-        if (head == null){
+    public static void printPreOrder(Node head) {
+        if (head == null) {
             return;
         }
         System.out.println(head.value + " ");
@@ -93,8 +94,8 @@ public class MaxTree {
         printPreOrder(head.right);
     }
 
-    public static void printInOrder(Node head){
-        if (head == null){
+    public static void printInOrder(Node head) {
+        if (head == null) {
             return;
         }
         printInOrder(head.left);
@@ -103,7 +104,7 @@ public class MaxTree {
     }
 
     public static void main(String[] args) {
-        int[] uniqueArr = {3,4,5,1,2};
+        int[] uniqueArr = {3, 4, 5, 1, 2};
         Node head = getMaxTree(uniqueArr);
         printPreOrder(head);
         System.out.println();

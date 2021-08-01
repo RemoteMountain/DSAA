@@ -15,11 +15,12 @@ public class IsBalancedTree {
     public static boolean isBalance(Node head) {
         boolean[] res = new boolean[1];
         res[0] = true;
-        int height = getHeight(head, 1, res);
+        /*int height = getHeight(head, 1, res);
         System.out.println(height);
-        return res[0];
-        //int height = getHeight(head);
-        //return height == -1?false:true;
+        return res[0];*/
+        int height = getHeight(head);
+        System.out.println(height);
+        return height == -1?false:true;
     }
 
     public static int getHeight(Node head, int level, boolean[] res) {

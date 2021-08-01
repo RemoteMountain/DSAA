@@ -1,4 +1,4 @@
-package com.niuke.practice.advance.day2;
+package com.niuke.practice.advance.day3;
 
 public class MaximalRectangle {
 

@@ -72,6 +72,7 @@ public class Code_01_Building_Outline {
 			int curPosition = entry.getKey();
 			int curMaxHeight = entry.getValue();
 			if (height != curMaxHeight) {
+				//大楼收尾
 				if (height != 0) {
 					List<Integer> newRecord = new ArrayList<Integer>();
 					newRecord.add(start);

@@ -69,7 +69,7 @@ public class BuildingOutline {
                     List<Integer> newRecord = new ArrayList<>();
                     newRecord.add(start);
                     newRecord.add(curPosition);
-                    newRecord.add(curHeight);
+                    newRecord.add(height);
                     res.add(newRecord);
                 }
                 start = curPosition;
@@ -81,6 +81,6 @@ public class BuildingOutline {
 
     public static void main(String[] args) {
         int[][] buildings = {{0,3,3},{2, 4, 4},{5, 6, 1}};
-        buildingOutline(buildings);
+        System.out.println(buildingOutline(buildings));
     }
 }

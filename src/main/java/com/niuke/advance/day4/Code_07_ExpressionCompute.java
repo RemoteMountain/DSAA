@@ -18,11 +18,11 @@ public class Code_07_ExpressionCompute {
 		while (i < str.length && str[i] != ')') {
 			if (str[i] >= '0' && str[i] <= '9') {
 				pre = pre * 10 + str[i++] - '0';
-			} else if (str[i] != '(') {
+			} else if (str[i] != '(') { //遇到了加减乘除的某一个符号
 				addNum(que, pre);
 				que.addLast(String.valueOf(str[i++]));
 				pre = 0;
-			} else {
+			} else { //遇到了左括号
 				bra = value(str, i + 1);
 				pre = bra[0];
 				i = bra[1] + 1;

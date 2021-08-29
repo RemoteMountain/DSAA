@@ -91,9 +91,15 @@ public class IsBSTAndCBT {
             if (l != null) {
                 queue.offer(l);
             }
-            if (r != null) {
+            /*if (r != null) {
                 queue.offer(r);
             } else {
+                leaf = true;
+            }*/
+            if (r != null) {
+                queue.offer(r);
+            }
+            if (l == null || r == null) {
                 leaf = true;
             }
         }

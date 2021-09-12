@@ -2,6 +2,7 @@ package com.niuke.advance.day2;
 
 import java.util.LinkedList;
 
+//最大值减去最小值小于给定值的子数组个数
 public class AllLessNumSubArray {
 
     public static int getNum1(int[] arr, int num) {

@@ -2,6 +2,7 @@ package com.niuke.advance.day4;
 
 import java.util.HashMap;
 
+//累加和等于给定数字的最大子数组长度
 public class Code_05_LongestSumSubArrayLength {
 
 	public static int maxLength(int[] arr, int k) {

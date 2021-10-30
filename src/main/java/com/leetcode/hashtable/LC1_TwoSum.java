@@ -1,16 +1,14 @@
-package com.leetcode;
+package com.leetcode.hashtable;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * @Description :   //描述
  * @Author : Liwang  //作者
  * @Date: 2021-02-09 17:25  //时间
  */
-public class Leetcode1 {
+public class LC1_TwoSum {
 
     /*1 两数之和*/
     public static int[] twoSum(int[] nums, int target) {

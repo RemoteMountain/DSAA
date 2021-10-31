@@ -14,31 +14,37 @@ public class FindFirstIntersectNode {
         }
     }
 
-    public static Node getLoopNode(Node head) {
-        if (head == null || head.next == null || head.next.next == null) {
+    public static Node getIntersectNode(Node head1, Node head2) {
+        if (head1 == null || head2 == null){
             return null;
         }
-        Node slow = head;
-        Node fast = head;
-        while (slow != fast) {
-            if (fast.next == null || fast.next.next == null) {
-                return null;
-            }
-            slow = slow.next;
-            fast = fast.next.next;
+        Node loop1 = getLoopNode(head1);
+        Node loop2 = getLoopNode(head2);
+        if (loop1 == null && loop2 == null){
+            return noLoop(head1,head2);
         }
-        fast = head;
-        while (slow != fast) {
-            slow = slow.next;
-            fast = fast.next;
+        if (loop1 != null && loop2 != null){
+            return bothLoop(head1,loop1,head2,loop2);
         }
-        return slow;
+        return null;
     }
 
+    //入环点
+    public static Node getLoopNode(Node head) {
+        if (head == null) {
+            return null;
+        }
+        return null;
+    }
+
+
+    //两个无环链表交点
     public static Node noLoop(Node head1, Node head2) {
         return null;
     }
 
+
+    //两个有环链表节点
     public static Node bothLoop(Node head1, Node loop1, Node head2, Node loop2) {
         return null;
     }

@@ -26,7 +26,7 @@ public class ReverseList {
 
 	public static class DoubleNode {
 		public int value;
-		public DoubleNode last;
+		public DoubleNode pre;
 		public DoubleNode next;
 
 		public DoubleNode(int data) {
@@ -40,7 +40,7 @@ public class ReverseList {
 		while (head != null) {
 			next = head.next;
 			head.next = pre;
-			head.last = next;
+			head.pre = next;
 			pre = head;
 			head = next;
 		}
@@ -67,7 +67,7 @@ public class ReverseList {
 		System.out.print("| ");
 		while (end != null) {
 			System.out.print(end.value + " ");
-			end = end.last;
+			end = end.pre;
 		}
 		System.out.println();
 	}
@@ -82,11 +82,11 @@ public class ReverseList {
 
 		DoubleNode head2 = new DoubleNode(1);
 		head2.next = new DoubleNode(2);
-		head2.next.last = head2;
+		head2.next.pre = head2;
 		head2.next.next = new DoubleNode(3);
-		head2.next.next.last = head2.next;
+		head2.next.next.pre = head2.next;
 		head2.next.next.next = new DoubleNode(4);
-		head2.next.next.next.last = head2.next.next;
+		head2.next.next.next.pre = head2.next.next;
 		printDoubleLinkedList(head2);
 		printDoubleLinkedList(reverseList(head2));
 

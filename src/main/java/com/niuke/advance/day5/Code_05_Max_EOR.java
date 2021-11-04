@@ -57,13 +57,34 @@ public class Code_05_Max_EOR {
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
             int eor = 0;
-            for (int j = i; j < arr.length; j++) {
+            for (int j = 0; j <= i; j++) {
                 eor ^= arr[j];
                 max = Math.max(max, eor);
             }
         }
         return max;
     }
+
+    public static int comparator2(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return 0;
+        }
+        int max = Integer.MIN_VALUE;
+        int eor = 0;
+        int[] dp = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            eor ^= arr[i];
+            max = Math.max(max, eor);
+            for (int j = 1; j <= i; j++) {
+                int curEor = eor ^ dp[j - 1];
+                max = Math.max(max, curEor);
+            }
+            dp[i] = eor;
+
+        }
+        return max;
+    }
+
 
     // for test
     public static int[] generateRandomArray(int maxSize, int maxValue) {
@@ -117,7 +138,7 @@ public class Code_05_Max_EOR {
                 for (int k = i; k <= j; k++) {
                     xor ^= arr[k];
                 }
-                res = Math.max(res,xor);
+                res = Math.max(res, xor);
             }
         }
         return res;

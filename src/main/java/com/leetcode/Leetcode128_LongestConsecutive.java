@@ -2,7 +2,7 @@ package com.leetcode;
 
 import java.util.HashSet;
 import java.util.Set;
-
+//最长连续序列
 public class Leetcode128_LongestConsecutive {
 
     public int longestConsecutive(int[] nums) {

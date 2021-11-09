@@ -3,7 +3,6 @@ package com.niuke.advance.day1;
 public class KMP {
 
 
-
     //O(n*m)
     public static int getIndexOf1(String str1, String str2) {
         if (str1 == null || str2 == null) {
@@ -23,6 +22,9 @@ public class KMP {
                 if (j == ch2.length - 1) {
                     return i;
                 }
+                if (x >= ch1.length) {
+                    return -1;
+                }
             }
         }
         return -1;
@@ -30,7 +32,7 @@ public class KMP {
 
     //KMP 加速匹配过程
     public static int getIndexOf2(String str1, String str2) {
-        if (str1 == null || str2 == null || str2.length() < 1 || str1.length() < str2.length()) {
+        if (str1 == null || str2 == null || str1.length() < str2.length()) {
             return -1;
         }
         char[] ch1 = str1.toCharArray();
@@ -74,9 +76,9 @@ public class KMP {
     }
 
     public static void main(String[] args) {
-        String str1 = "abc123def";
-        String str2 = "123d";
+        String str1 = "mississippi";
+        String str2 = "issipi";
         System.out.println(str1.indexOf(str2));
-        System.out.println(getIndexOf1(str1, str2));
+        System.out.println(getIndexOf2(str1, str2));
     }
 }

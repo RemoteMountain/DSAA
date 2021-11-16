@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.dp;
 
 //戳气球
 public class Leetcode312_PokeBalloon {

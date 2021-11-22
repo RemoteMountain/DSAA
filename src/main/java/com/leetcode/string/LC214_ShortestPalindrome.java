@@ -10,8 +10,8 @@ public class LC214_ShortestPalindrome {
         if (s.length() == 1) {
             return s + s;
         }
-        if (s.length() == 2){
-            return "";
+        if (s.length() == 2) {
+            return s.charAt(0) == s.charAt(1) ? s.charAt(0) + s : s.charAt(1) + s;
         }
         return "";
     }

@@ -10,9 +10,32 @@ public class LC214_ShortestPalindrome {
         if (s.length() == 1) {
             return s + s;
         }
-        if (s.length() == 2){
-            return "";
+        String revS = new StringBuilder(s).reverse().toString();
+        String m = revS + "#" + s;
+        int i = getMaxPalindromeNextArray(m);
+        String add = new StringBuilder(s.substring(i)).reverse().toString();
+        return add + s;
+    }
+
+    private static int getMaxPalindromeNextArray(String s) {
+        if (s == null) {
+            return -1;
         }
-        return "";
+        int[] next = new int[s.length() + 1];
+        next[0] = -1;
+        next[1] = 0;
+        int pos = 2;
+        int cnt = 0;
+        while (pos < next.length) {
+            if (s.charAt(pos - 1) == s.charAt(cnt)) {
+                next[pos++] = ++cnt;
+            } else if (cnt > 0) {
+                cnt = next[cnt];
+            } else {
+                next[pos++] = 0;
+
+            }
+        }
+        return next[s.length()];
     }
 }

@@ -7,11 +7,8 @@ public class LC214_ShortestPalindrome {
         if (s == null || s.length() == 0) {
             return "";
         }
-        if (s.length() == 1) {
-            return s + s;
-        }
         String revS = new StringBuilder(s).reverse().toString();
-        String m = revS + "#" + s;
+        String m = s + "#" + revS;
         int i = getMaxPalindromeNextArray(m);
         String add = new StringBuilder(s.substring(i)).reverse().toString();
         return add + s;
@@ -37,5 +34,9 @@ public class LC214_ShortestPalindrome {
             }
         }
         return next[s.length()];
+    }
+
+    public static void main(String[] args) {
+        System.out.println(shortestPalindrome(("aacecaaa")));
     }
 }
